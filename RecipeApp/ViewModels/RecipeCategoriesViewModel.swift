@@ -19,8 +19,10 @@ class RecipeCategoriesViewModel: ObservableObject {
         self.recipeRepository = recipeRepository
     }
 
-    func getRecipeCategory(_ category: RecipeCategory) async {
-        guard recipes == nil else { return }
+    func getRecipeCategory(_ category: RecipeCategory, isRefreshing: Bool = false) async {
+        guard recipes == nil || isRefreshing else { return }
+
+        showRecipeCategoryError = false
 
         if let recipeCategory = await recipeRepository.getRecipeCategory(category: category) {
             sortRecipes(recipes: recipeCategory.meals)

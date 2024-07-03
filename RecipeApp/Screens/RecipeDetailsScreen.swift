@@ -25,9 +25,13 @@ struct RecipeDetailsScreen: View {
                         headerView(geometryProxy: geometryProxy)
 
                         VStack(alignment: .leading, spacing: 16) {
-                            instructionsView
-
-                            ingredientsView
+                            if viewModel.showRecipeDetailsError {
+                                ErrorCard()
+                            } else {
+                                instructionsView
+                                
+                                ingredientsView
+                            }
                         }
                         .padding(16)
                     }
@@ -38,18 +42,16 @@ struct RecipeDetailsScreen: View {
                         showNavigationBarBackground = $0 + safeAreaInsets.top > geometryProxy.size.width
                     }
                 }
+                .refreshable {
+                    await viewModel.getRecipeDetails()
+                }
             }
             .ignoresSafeArea(edges: .top)
 
-            RecipeDetailNavigationBar()
-                .padding(.horizontal, 16)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .background(showNavigationBarBackground ? Color.cardBackground : Color.clear)
-                .animation(.default, value: showNavigationBarBackground)
-                .cardDropShadow()
+            RecipeDetailNavigationBar(title: viewModel.recipeDetails.strMeal, showNavigationBarBackground: showNavigationBarBackground)
         }
         .task {
-            await viewModel.getRecipeDetails()
+          //  await viewModel.getRecipeDetails()
         }
     }
 

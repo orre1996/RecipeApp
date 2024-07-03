@@ -19,6 +19,7 @@
 		9F46E56E2C34AD7C008005F4 /* SafeAreaInsetsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F46E56D2C34AD7C008005F4 /* SafeAreaInsetsKey.swift */; };
 		9F46E5702C34ADD9008005F4 /* UIWindow+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F46E56F2C34ADD9008005F4 /* UIWindow+Extensions.swift */; };
 		9F46E5722C34ADE3008005F4 /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F46E5712C34ADE3008005F4 /* UIApplication+Extensions.swift */; };
+		9F46E5762C34F714008005F4 /* ErrorCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F46E5752C34F714008005F4 /* ErrorCard.swift */; };
 		9FE900902C344EE700D08E38 /* RecipeAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE9008F2C344EE700D08E38 /* RecipeAppApp.swift */; };
 		9FE900922C344EE700D08E38 /* RecipeListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE900912C344EE700D08E38 /* RecipeListScreen.swift */; };
 		9FE900942C344EF100D08E38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FE900932C344EF100D08E38 /* Assets.xcassets */; };
@@ -59,6 +60,7 @@
 		9F46E56D2C34AD7C008005F4 /* SafeAreaInsetsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeAreaInsetsKey.swift; sourceTree = "<group>"; };
 		9F46E56F2C34ADD9008005F4 /* UIWindow+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+Extensions.swift"; sourceTree = "<group>"; };
 		9F46E5712C34ADE3008005F4 /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
+		9F46E5752C34F714008005F4 /* ErrorCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorCard.swift; sourceTree = "<group>"; };
 		9FE9008C2C344EE700D08E38 /* RecipeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FE9008F2C344EE700D08E38 /* RecipeAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeAppApp.swift; sourceTree = "<group>"; };
 		9FE900912C344EE700D08E38 /* RecipeListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListScreen.swift; sourceTree = "<group>"; };
@@ -122,6 +124,25 @@
 				9F46E56D2C34AD7C008005F4 /* SafeAreaInsetsKey.swift */,
 			);
 			path = Keys;
+			sourceTree = "<group>";
+		};
+		9F46E5732C34F701008005F4 /* RecipeCategoryList */ = {
+			isa = PBXGroup;
+			children = (
+				9FE900B52C34598900D08E38 /* RecipeCategoryCard.swift */,
+			);
+			path = RecipeCategoryList;
+			sourceTree = "<group>";
+		};
+		9F46E5742C34F708008005F4 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				9FE900C32C34600600D08E38 /* ShimmeringImage.swift */,
+				9FE900C52C34600C00D08E38 /* ShimmeringText.swift */,
+				9FE900CB2C3466DD00D08E38 /* SearchField.swift */,
+				9F46E5752C34F714008005F4 /* ErrorCard.swift */,
+			);
+			path = General;
 			sourceTree = "<group>";
 		};
 		9FE900832C344EE700D08E38 = {
@@ -218,11 +239,9 @@
 		9FE900B42C34585000D08E38 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				9F46E5742C34F708008005F4 /* General */,
+				9F46E5732C34F701008005F4 /* RecipeCategoryList */,
 				9F46E5642C349A20008005F4 /* RecipeDetails */,
-				9FE900B52C34598900D08E38 /* RecipeCategoryCard.swift */,
-				9FE900C32C34600600D08E38 /* ShimmeringImage.swift */,
-				9FE900C52C34600C00D08E38 /* ShimmeringText.swift */,
-				9FE900CB2C3466DD00D08E38 /* SearchField.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -347,6 +366,7 @@
 				9FE900A32C34505E00D08E38 /* Endpoint.swift in Sources */,
 				9FE900AE2C34551600D08E38 /* RecipeDetailsResponse.swift in Sources */,
 				9FE900BD2C345BAC00D08E38 /* String+Extensions.swift in Sources */,
+				9F46E5762C34F714008005F4 /* ErrorCard.swift in Sources */,
 				9F46E5632C349931008005F4 /* DynamicCodingKeys.swift in Sources */,
 				9F46E5702C34ADD9008005F4 /* UIWindow+Extensions.swift in Sources */,
 				9FE900B92C345A6500D08E38 /* Font+Extensions.swift in Sources */,

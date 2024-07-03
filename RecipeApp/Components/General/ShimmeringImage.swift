@@ -39,7 +39,6 @@ struct ShimmeringImage: View {
                 placeholderImage
             }
         }
-        //.clipped()
     }
     
     private var placeholderImage: some View {

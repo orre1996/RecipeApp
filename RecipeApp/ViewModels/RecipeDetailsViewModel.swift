@@ -20,6 +20,8 @@ class RecipeDetailsViewModel: ObservableObject {
     }
 
     func getRecipeDetails() async {
+        showRecipeDetailsError = false
+
         if let recipeDetails = await recipeRepository.getRecipeDetails(recipeId: recipeDetails.idMeal)?.meals.first {
             self.recipeDetails = recipeDetails
         } else {

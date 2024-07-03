@@ -14,9 +14,7 @@ struct RecipeListScreen: View {
     @State private var selectedMealItem = Meal.emptyMeal()
     @State private var navigateToDetailPage = false
 
-    private let columns = [
-        GridItem(.adaptive(minimum: 150, maximum: 400), spacing: 16)
-    ]
+    private let columns = [GridItem(.adaptive(minimum: 150, maximum: 400), spacing: 16)]
 
     var body: some View {
         ZStack {
@@ -28,17 +26,22 @@ struct RecipeListScreen: View {
                     .padding(.top, 16)
 
                 ScrollView {
-                    if viewModel.recipes != nil {
+                    if viewModel.showRecipeCategoryError {
+                        ErrorCard()
+                    } else if viewModel.recipes != nil {
                         populatedList
                     } else {
                         loadingList
                     }
                 }
+                .refreshable {
+                    await viewModel.getRecipeCategory(.dessert, isRefreshing: true)
+                }
             }
             .padding(.horizontal, 16)
         }
         .task {
-            await viewModel.getRecipeCategory(.dessert)
+           // await viewModel.getRecipeCategory(.dessert)
         }
         .navigate(to: RecipeDetailsScreen.create(meal: selectedMealItem), when: $navigateToDetailPage)
     }
