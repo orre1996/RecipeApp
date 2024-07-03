@@ -51,7 +51,7 @@ struct RecipeDetailsScreen: View {
             RecipeDetailNavigationBar(title: viewModel.recipeDetails.strMeal, showNavigationBarBackground: showNavigationBarBackground)
         }
         .task {
-          //  await viewModel.getRecipeDetails()
+            await viewModel.getRecipeDetails()
         }
     }
 

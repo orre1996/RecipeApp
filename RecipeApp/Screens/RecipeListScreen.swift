@@ -41,7 +41,7 @@ struct RecipeListScreen: View {
             .padding(.horizontal, 16)
         }
         .task {
-           // await viewModel.getRecipeCategory(.dessert)
+            await viewModel.getRecipeCategory(.dessert)
         }
         .navigate(to: RecipeDetailsScreen.create(meal: selectedMealItem), when: $navigateToDetailPage)
     }
