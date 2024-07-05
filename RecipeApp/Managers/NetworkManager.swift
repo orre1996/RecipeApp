@@ -23,8 +23,7 @@ class NetworkManager {
 
             guard (response as? HTTPURLResponse)?.statusCode == 200 else { return .failure(NetworkManagerError.invalidRequest) }
 
-            let model = try JSONDecoder().decode(T.self, from: data)
-            return .success(model)
+            return .success(try JSONDecoder().decode(T.self, from: data))
         } catch {
             return .failure(NetworkManagerError.invalidData)
         }

@@ -9,13 +9,13 @@ import Foundation
 
 @MainActor
 class RecipeCategoriesViewModel: ObservableObject {
-    let recipeRepository: RecipeRepository
+    let recipeRepository: RecipeRepositoryProtocol
 
     @Published var recipes: [Meal]?
     @Published var showRecipeCategoryError = false
     @Published var sortOption = RecipeCategorySortOption.alphabetic
 
-    init(recipeRepository: RecipeRepository = RecipeRepository.shared) {
+    init(recipeRepository: RecipeRepositoryProtocol = RecipeRepository.shared) {
         self.recipeRepository = recipeRepository
     }
 

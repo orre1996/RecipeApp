@@ -34,6 +34,6 @@ struct Meal: Codable, Hashable {
                              strImageSource: nil,
                              strCreativeCommonsConfirmed: nil,
                              dateModified: nil,
-                             ingredients: [])
+                             ingredients: nil)
     }
 }

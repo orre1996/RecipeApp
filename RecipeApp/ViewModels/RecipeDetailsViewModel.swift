@@ -9,12 +9,12 @@ import Foundation
 
 @MainActor
 class RecipeDetailsViewModel: ObservableObject {
-    private let recipeRepository: RecipeRepository
+    private let recipeRepository: RecipeRepositoryProtocol
 
     @Published var recipeDetails: RecipeDetails
     @Published var showRecipeDetailsError = false
     
-    init(recipeRepository: RecipeRepository = RecipeRepository.shared, meal: Meal) {
+    init(recipeRepository: RecipeRepositoryProtocol = RecipeRepository.shared, meal: Meal) {
         self.recipeRepository = recipeRepository
         self.recipeDetails = meal.toRecipeDetails()
     }

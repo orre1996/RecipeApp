@@ -7,7 +7,7 @@
 
 import Foundation
 
-class RecipeRepository {
+class RecipeRepository: RecipeRepositoryProtocol {
     static let shared = RecipeRepository()
 
     let networkManager: NetworkManager

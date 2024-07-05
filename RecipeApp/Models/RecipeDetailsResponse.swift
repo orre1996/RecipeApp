@@ -25,7 +25,7 @@ struct RecipeDetails: Codable {
     let strImageSource: String?
     let strCreativeCommonsConfirmed: String?
     let dateModified: String?
-    let ingredients: [String]
+    let ingredients: [String]?
 }
 
 extension RecipeDetails {
