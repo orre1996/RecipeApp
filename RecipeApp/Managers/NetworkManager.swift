@@ -12,7 +12,7 @@ class NetworkManager {
 
     let session = URLSession.shared
 
-    public func get<T: Decodable>(endpoint: Endpoint, date: Date? = nil) async -> Result<T, Error> {
+    public func get<T: Decodable>(endpoint: Endpoint) async -> Result<T, Error> {
         guard let url = URL(string: endpoint.path) else { return .failure(NetworkManagerError.invalidUrl) }
 
         var request = URLRequest(url: url)
